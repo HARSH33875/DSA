@@ -1,0 +1,35 @@
+#include<stdio.h>
+
+int  binsearch(int arr[],int low,int high,int key){
+    if(high>=low){
+        int mid=(high+low)/2;
+        if(arr[mid]==key)
+            return mid;
+        
+        if (arr[mid]>key)
+            return binsearch(arr,low,high=mid-1,key);
+            
+        return binsearch(arr,low=mid+1,high,key);    
+        
+        
+    }
+    return -1;
+    
+}
+int main(){
+    int target,n,arr[20];
+   
+    printf("enter the no. of arrys");
+    scanf("%d",&n);
+    printf("enter the numbers\n");
+    for(int i=1;i<=n;i++){
+        scanf("%d",&arr[i]);
+        
+    }
+        printf("enter the no. to be searched");
+        scanf("%d",&target);
+        int result=binsearch(arr,0,n-1,target);
+       (result==-1) ?  printf("number is not present ") :
+       printf("the %d is present at %d position",target,result);
+    
+}
