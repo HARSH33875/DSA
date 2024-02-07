@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+void create();
+void display();
+void insert();
+void delete();
+int arr[50],ele,n,p;
+
+int main() {
+int ch;
+
+    printf("\noperation performed are ");
+    printf("\n1create");
+    printf("\n2display");
+    printf("\n3insert");
+    printf("\n4delete");
+    printf("\n5exit");
+
+    printf("\nenter your choice");
+    scanf("%d",&ch);
+    while(1){
+    switch(ch){
+        case 1: create();
+         break;
+         case 2:  display();
+         break;
+         case 3:  insert();
+         break;
+         case 4:  delete();
+         break;
+         case 5: exit(0);
+         printf("invalid choice");
+         break;
+    }
+
+}
+}
+void create(){
+    
+   
+    printf("enter the number of elements");
+    scanf("%d",&n);
+    printf("enter the elements");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    
+}
+void display(){
+        
+  printf(" the  elements are:");
+    printf("\n");
+    
+   
+    for(int i=0;i<n;i++){
+        printf("%d\n",arr[i]);
+}
+}
+void insert(){
+     printf("enter the position  for element to be inserted ");
+        scanf("%d",&p);
+        printf("enter the element to be inserted");
+        scanf("%d",&ele);
+        
+        for(int i=n-1;i>=p-1;i--){
+            arr[i+1]=arr[i];
+        }
+        arr[p-1]=ele;
+        n++;
+    
+}
+void delete(){
+     printf("enter the position of the element to be deleted");
+    scanf("%d",&p);
+    int x=arr[p-1];
+    
+    for(int i=p;i<=n;i++){
+        arr[i-1]=arr[i];
+        
+    }
+        n--;
+}
+
+
+   
